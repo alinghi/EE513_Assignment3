@@ -1,0 +1,30 @@
+PA#3 Network Intrusion Detection System
+Name : Na, Yun Seok
+Student ID : 20176141
+
+
+1.Install
+1.1 Auto Compile 
+I assume execution environment's user has root priv.
+Just execute 'install.sh' it will make 'nids' in p3 directory.
+
+1.2 Manual Compile
+In p3/src directory,
+gcc -std=gnu99 -o output_file_name main.c -lpcap
+It will create 'output_file_name' in the p3/src directory.
+
+2.Execute
+2.1 Auto attach mode
+sudo ./nids rule_file
+
+2.2 Manual attach mode
+sudo ./nids rule_file network_interface_name
+
+3.Rule File
+I hope that grader will use valid rule file. My program consider every single line in rule file as a single rule. It will check line whether it has a valid snort or not.
+
+4. Output
+It will print how many packet it received. In each packet, if snort rule matched it will print out various information with highlight matched field. If no snort rule matched with packet it will not print anything.
+
+5. Highlight matched field
+IP, Port information will not be highlighted. Since, my program print whenever snort rule matched. Content, http_request will not be highlighted in the payload print section but will be printed iin extra space. 
